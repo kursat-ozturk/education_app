@@ -1,3 +1,4 @@
+import 'package:education_app/spanish.dart';
 import 'package:flutter/material.dart';
 import 'homepage.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Spanish(), //HomePage(),
     );
   }
 }

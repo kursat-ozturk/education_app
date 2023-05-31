@@ -124,14 +124,16 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 25,
                         color: Colors.black,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 10),
                     Text(
                       "Turkish foods",
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 18,
                         color: Colors.red,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -140,6 +142,7 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.grey,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],

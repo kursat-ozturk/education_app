@@ -27,9 +27,10 @@ class Spanish extends StatelessWidget {
                       AppBar(
                         backgroundColor: Colors.transparent,
                         elevation: 0.0,
-                        leading: const Padding(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Icon(Icons.arrow_back_ios_new, size: 25),
+                        leading: IconButton(
+                          icon: const Icon(Icons.arrow_back),
+                          padding: const EdgeInsets.only(left: 20),
+                          onPressed: () => Navigator.pop(context, false),
                         ),
                         centerTitle: true,
                         title: const Text(

@@ -1,31 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'cart_widget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.cyan,
+      drawer: Drawer(
+        child: Container(
+          padding: EdgeInsets.all(30),
+          color: Colors.blue,
+          alignment: Alignment.bottomLeft,
+          child: Icon(
+            FontAwesomeIcons.earthAsia,
+            color: Colors.white,
+            size: 80,
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 30),
-          child: Icon(
-            Icons.menu_rounded,
-            color: Colors.black,
-            size: 30,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+              icon: Icon(
+                FontAwesomeIcons.earthAsia,
+                size: 20,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+          ],
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 35),
-            child: Icon(Icons.travel_explore, color: Colors.black, size: 35),
-            //FontAwesomeIcons.earthAsia, color: Colors.black, size: 30),
-          ),
-        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,10 +49,13 @@ class HomePage extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset(
-                      'assets/profile.png',
-                      height: 70,
-                      width: 70,
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/profile.png',
+                        height: 70,
+                        width: 70,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     const SizedBox(width: 20),
                     const Column(
@@ -50,7 +65,7 @@ class HomePage extends StatelessWidget {
                           "Jennifer Josef",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 20,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -59,13 +74,13 @@ class HomePage extends StatelessWidget {
                           children: [
                             Icon(
                               FontAwesomeIcons.locationDot,
-                              color: Colors.grey,
+                              color: Colors.black54,
                               size: 17,
                             ),
                             Text(
                               "United Kingdom",
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.black54,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -76,6 +91,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 20),
                 const Text(
                   'Welcome Back!',
                   style: TextStyle(
@@ -129,7 +145,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Turkish foods",
+                      "Adverbs",
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.red,
@@ -141,7 +157,7 @@ class HomePage extends StatelessWidget {
                       "Take this lesson to\nearn a new milestone",
                       style: TextStyle(
                         fontSize: 15,
-                        color: Colors.grey,
+                        color: Colors.black54,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -179,60 +195,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class Cart extends StatelessWidget {
-  const Cart({super.key, required this.courses, required this.text});
-
-  final String courses;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: 120,
-      width: 200,
-      decoration: BoxDecoration(
-        color: Colors.lightBlue[800],
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  courses,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  text,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const Icon(
-              FontAwesomeIcons.chevronRight,
-              color: Colors.white,
-            ),
-          ],
-        ),
       ),
     );
   }
